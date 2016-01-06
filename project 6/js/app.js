@@ -7,6 +7,8 @@
  */
 
 // The names and URLs to all of the feeds we'd like available.
+
+// Added to allFeeds array for testing purposes.
 var allFeeds = [
     {
         name: 'Udacity Blog',
@@ -20,6 +22,9 @@ var allFeeds = [
     }, {
         name: 'Linear Digressions',
         url: 'http://feeds.feedburner.com/udacity-linear-digressions'
+    }, {
+        name: 'Reuters Health News',
+        url: 'http://feeds.reuters.com/reuters/healthNews'
     }
 ];
 

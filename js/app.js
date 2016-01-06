@@ -18,7 +18,7 @@ var allFeeds = [
         url: 'http://css-tricks.com/feed'
     }, {
         name: 'HTML5 Rocks',
-        url: 
+        url: 'http://feeds.feedburner.com/html5rocks'
     }, {
         name: 'Linear Digressions',
         url: 'http://feeds.feedburner.com/udacity-linear-digressions'

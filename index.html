@@ -10,12 +10,36 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/icomoon.css">
         <link rel="stylesheet" href="css/style.css">
-
         <link rel="stylesheet" href="jasmine/lib/jasmine-2.1.2/jasmine.css">
-
+        <!-- Magnific Popup core CSS file -->
+        <link rel="stylesheet" href="css/magnific-popup.css">
         <script src="jasmine/lib/jasmine-2.1.2/jasmine.js"></script>
         <script src="jasmine/lib/jasmine-2.1.2/jasmine-html.js"></script>
         <script src="jasmine/lib/jasmine-2.1.2/boot.js"></script>
+        <style>
+            #blanket {
+               background-color:#111;
+               opacity: 0.65;
+               position:absolute;
+               z-index: 9001;
+               top:0px;
+               left:0px;
+               width:100%;
+            }
+            #popUpDiv {
+                position:absolute;
+                background-color:#eeeeee;
+                width:900px;
+                overflow: scroll;
+                z-index: 9002;
+            }
+            .screenshot-bar{
+                margin: 10px;
+                text-align: center;
+
+            }
+        </style>
+
     </head>
     <body class="menu-hidden">
         <div class="header">
@@ -48,8 +72,27 @@
             </li>
         </script>
 
+        <br>
+
+        <div id="blanket" style="display:none;"></div>
+        <div id="popUpDiv" style="display:none;">
+            <a href="#" onclick="popup('popUpDiv')">
+                <img src="img/induced-failure-after-altering-allFeeds-array.png" width="1300px" />
+            </a>
+        </div>  
+        <div class="screenshot-bar">
+            <a href="#" onclick="popup('popUpDiv')">
+                <img src="img/induced-failure-after-altering-allFeeds-array.png" width="300px" />
+                <br>Click to view screenshot of first induced failure.
+            </a>
+        </div>
+        <br>
+        <hr>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="http://cdn.jsdelivr.net/handlebarsjs/2.0.0/handlebars.min.js"></script>
+
+        <!-- Magnific Popup core JS file -->
+        <script src="js/csspopup.js"></script>
         <script src="http://google.com/jsapi"></script>
         <script src="js/app.js"></script>
 

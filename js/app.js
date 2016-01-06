@@ -8,7 +8,7 @@
 
 // The names and URLs to all of the feeds we'd like available.
 
-// Added to allFeeds array for testing purposes.
+// Edited allFeeds array in order to induce failing for testing purposes.
 var allFeeds = [
     {
         name: 'Udacity Blog',
@@ -18,7 +18,7 @@ var allFeeds = [
         url: 'http://css-tricks.com/feed'
     }, {
         name: 'HTML5 Rocks',
-        url: 'http://feeds.feedburner.com/html5rocks'
+        url: 
     }, {
         name: 'Linear Digressions',
         url: 'http://feeds.feedburner.com/udacity-linear-digressions'

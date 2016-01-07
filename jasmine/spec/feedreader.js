@@ -25,7 +25,13 @@ $(function() {
          it('url is present and not empty', function(){
             for(var i = 0; i < allFeeds.length; i++){
                 expect(allFeeds[i].url).toBeDefined();
-                expect(allFeeds[i].url).not.toBe('');
+                /*
+                The following line states that the expectation
+                is that the url will not be an empty string.
+                If .not.toBe(0) were used then an empty string
+                would pass the test.
+                */
+                expect(allFeeds[i].url).not.toBe(0);
             }
          });
 

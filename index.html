@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="jasmine/lib/jasmine-2.1.2/jasmine.css">
 
+        
         <script src="jasmine/lib/jasmine-2.1.2/jasmine.js"></script>
         <script src="jasmine/lib/jasmine-2.1.2/jasmine-html.js"></script>
         <script src="jasmine/lib/jasmine-2.1.2/boot.js"></script>
@@ -32,10 +33,26 @@
                 overflow: scroll;
                 z-index: 9002;
             }
+            #popUpDiv2 {
+                position:absolute;
+                background-color:#eeeeee;
+                width:900px;
+                overflow: scroll;
+                z-index: 9002;
+            }
             .screenshot-bar{
                 margin: 10px;
                 text-align: center;
 
+            }
+            .row-display{
+                display: inline-flex;
+                width: 100%;
+            }
+            .col-4{
+                width: 33.33%;
+                background-color: #c0c0c0;
+                padding: 10px;
             }
         </style>
 
@@ -77,22 +94,41 @@
             <a href="#" onclick="popup('popUpDiv')">
                 <img src="img/induced-failure-after-altering-allFeeds-array.png" width="1300px" />
             </a>
+        </div> 
+        <div id="popUpDiv2" style="display:none;">
+            <a href="#" onclick="popup('popUpDiv2')">
+                <img src="img/second-failure-no-url.png" width="1300px" />
+            </a>
         </div>  
         <div class="screenshot-bar">
-            <a href="#" onclick="popup('popUpDiv')">
-                <img src="img/induced-failure-after-altering-allFeeds-array.png" width="300px" />
-                <br>Click to view screenshot of first induced failure.
-            </a>
+            <div class="row-display">
+                <div class="col-4">
+                    <a href="#" onclick="popup('popUpDiv')">
+                        <img src="img/induced-failure-after-altering-allFeeds-array.png" width="300px" />
+                        <br>Click to view screenshot of first induced failure.
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="#" onclick="popup('popUpDiv2')">
+                        <img src="img/second-failure-no-url.png" width="300px" />
+                        <br>Click to view screenshot of second induced failure (testing name and url).
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="#" onclick="popup('popUpDiv')">
+                        <img src="img/induced-failure-after-altering-allFeeds-array.png" width="300px" />
+                        <br>Click to view screenshot of first induced failure.
+                    </a>
+                </div>
+            </div>
         </div>
         <br>
         <hr>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <script src="http://cdn.jsdelivr.net/handlebarsjs/2.0.0/handlebars.min.js"></script>
-
         <script src="js/csspopup.js"></script>
         <script src="http://google.com/jsapi"></script>
         <script src="js/app.js"></script>
-
         <script src="jasmine/spec/feedreader.js"></script>
     </body>
 </html>

@@ -40,8 +40,22 @@
                 overflow: scroll;
                 z-index: 9002;
             }
+            #popUpDiv3 {
+                position:absolute;
+                background-color:#eeeeee;
+                width:900px;
+                overflow: scroll;
+                z-index: 9002;
+            }
+            #popUpDiv4 {
+                position:absolute;
+                background-color:#eeeeee;
+                width:900px;
+                overflow: scroll;
+                z-index: 9002;
+            }
             .screenshot-bar{
-                margin: 10px;
+                margin-top: 20px;
                 text-align: center;
 
             }
@@ -50,9 +64,12 @@
                 width: 100%;
             }
             .col-4{
-                width: 33.33%;
+                width: 25%;
                 background-color: #c0c0c0;
-                padding: 10px;
+                padding: 15px;
+            }
+            .col-4 img{
+                width: 80%;
             }
         </style>
 
@@ -89,35 +106,51 @@
 
         <br>
 
-        <div id="blanket" style="display:none;"></div>
+        <div id="blanket" class="blank" style="display:none;"></div>
         <div id="popUpDiv" style="display:none;">
-            <a href="#" onclick="popup('popUpDiv')">
+            <a href="#" class="imagePop" onclick="popup('popUpDiv')">
                 <img src="img/induced-failure-after-altering-allFeeds-array.png" width="1300px" />
             </a>
         </div> 
         <div id="popUpDiv2" style="display:none;">
-            <a href="#" onclick="popup('popUpDiv2')">
+            <a href="#" class="imagePop" onclick="popup('popUpDiv2')">
                 <img src="img/second-failure-no-url.png" width="1300px" />
             </a>
-        </div>  
+        </div> 
+        <div id="popUpDiv3" style="display:none;">
+            <a href="#" class="imagePop" onclick="popup('popUpDiv3')">
+                <img src="img/menu-not-hidden.png" width="1300px" />
+            </a>
+        </div> 
+        <div id="popUpDiv4" style="display:none;">
+            <a href="#" class="imagePop" onclick="popup('popUpDiv4')">
+                <img src="img/not-responsive.png" width="1300px" />
+            </a>
+        </div> 
         <div class="screenshot-bar">
             <div class="row-display">
                 <div class="col-4">
                     <a href="#" onclick="popup('popUpDiv')">
-                        <img src="img/induced-failure-after-altering-allFeeds-array.png" width="300px" />
-                        <br>Click to view screenshot of first induced failure.
+                        <img src="img/induced-failure-after-altering-allFeeds-array.png" />
+                        <p>Click to view screenshot of first induced failure.</p>
                     </a>
                 </div>
                 <div class="col-4">
                     <a href="#" onclick="popup('popUpDiv2')">
-                        <img src="img/second-failure-no-url.png" width="300px" />
-                        <br>Click to view screenshot of second induced failure (testing name and url).
+                        <img src="img/second-failure-no-url.png" />
+                        <p>Click to view screenshot of second induced failure<br> (testing name and url).</p>
                     </a>
                 </div>
                 <div class="col-4">
-                    <a href="#" onclick="popup('popUpDiv')">
-                        <img src="img/induced-failure-after-altering-allFeeds-array.png" width="300px" />
-                        <br>Click to view screenshot of first induced failure.
+                    <a href="#" onclick="popup('popUpDiv3')">
+                        <img src="img/menu-not-hidden.png" />
+                        <p>Click to view screenshot of third induced failure <br> (menu not hidden by default).</p>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="#" onclick="popup('popUpDiv4')">
+                        <img src="img/not-responsive.png" />
+                        <p>Click to view screenshot of fourth induced failure <br> (menu not responding to menu-icon click).</p>
                     </a>
                 </div>
             </div>

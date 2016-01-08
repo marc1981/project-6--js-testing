@@ -1,4 +1,6 @@
-CSS-popup provided by: Patrick Burt http://www.pat-burt.com/web-development/how-to-do-a-css-popup-without-opening-a-new-window/
+CSS-popup provided by: [Patrick Burt](http://www.pat-burt.com/web-development/how-to-do-a-css-popup-without-opening-a-new-window/)
+
+Additional Jasmine matchers `.toHaveClass` and `.toHaveCss` were added based off of code from: https://github.com/velesin/jasmine-jquery/blob/master/lib/jasmine-jquery.js
 
 # Project Overview
 

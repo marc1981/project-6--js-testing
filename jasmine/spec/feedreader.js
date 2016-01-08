@@ -4,37 +4,37 @@
 
 $(function() {
         
-        beforeEach(function () {
-            jasmine.addMatchers({
-                //Add Jasmine Matchers for Class and Css Styles.
-                //Thanks to https://github.com/velesin/jasmine-jquery/blob/master/lib/jasmine-jquery.js
-                toHaveClass: function () {
-                    return {
-                        compare: function (actual, className) {
-                            return { pass: $(actual).hasClass(className) }
-                        }
-                    }
-                },
-
-                toHaveCss: function () {
-                    return {
-                      compare: function (actual, css) {
-                        var stripCharsRegex = /[\s;\"\']/g
-                        for (var prop in css) {
-                            var value = css[prop];
-                            if ((value === 'auto') && ($(actual).get(0).style[prop] === 'auto')) continue
-                                var actualStripped = $(actual).css(prop).replace(stripCharsRegex, '')
-                                var valueStripped = value.replace(stripCharsRegex, '')
-                            if (actualStripped !== valueStripped) return { pass: false }
-                        }
-                        return { pass: true }
-                      }
+    beforeEach(function () {
+        jasmine.addMatchers({
+            //Add Jasmine Matchers for Class and Css Styles.
+            //Thanks to https://github.com/velesin/jasmine-jquery/blob/master/lib/jasmine-jquery.js
+            toHaveClass: function () {
+                return {
+                    compare: function (actual, className) {
+                        return { pass: $(actual).hasClass(className) }
                     }
                 }
-            
-            }) 
+            },
 
-        });
+            toHaveCss: function () {
+                return {
+                  compare: function (actual, css) {
+                    var stripCharsRegex = /[\s;\"\']/g
+                    for (var prop in css) {
+                        var value = css[prop];
+                        if ((value === 'auto') && ($(actual).get(0).style[prop] === 'auto')) continue
+                            var actualStripped = $(actual).css(prop).replace(stripCharsRegex, '')
+                            var valueStripped = value.replace(stripCharsRegex, '')
+                        if (actualStripped !== valueStripped) return { pass: false }
+                        }
+                    return { pass: true }
+                    }
+                }
+            }
+            
+        }) 
+
+    });
     
     describe('RSS Feeds', function() {
         /* This is our first test - it tests to make sure that the
@@ -117,81 +117,69 @@ $(function() {
 
     /*Test suite to make sure pop-up images respond to clicks*/
     describe('Screenshot row', function(){
-        var screenshot1 = $('#popUpDiv');
-        var screenshot2 = $('#popUpDiv2');
-        var screenshot3 = $('#popUpDiv3');
-        var screenshot4 = $('#popUpDiv4');
+        var screenshot = $('.pop');
         var imageSelect = $('.imagePop');
 
-        it('pop up image 1 on click', function(){
+        it('pop up image on click', function(){
             //click the image-icon to show the larger image
             imageSelect.trigger('click');
             //check if it is visible
-            expect(screenshot1).toHaveCss({"display":"block"});
+            expect(screenshot).toHaveCss({"display":"block"});
             //click the icon again
             imageSelect.trigger('click');
             //check if it is hidden
-            expect(screenshot1).toHaveCss({"display":"none"});
-        });
-        it('pop up image 2 on click', function(){
-            //click the image-icon to show the larger image
-            imageSelect.trigger('click');
-            //check if it is visible
-            expect(screenshot1).toHaveCss({"display":"block"});
-            //click the icon again
-            imageSelect.trigger('click');
-            //check if it is hidden
-            expect(screenshot1).toHaveCss({"display":"none"});
-        });
-        it('pop up image 3 on click', function(){
-            //click the image-icon to show the larger image
-            imageSelect.trigger('click');
-            //check if it is visible
-            expect(screenshot2).toHaveCss({"display":"block"});
-            //click the icon again
-            imageSelect.trigger('click');
-            //check if it is hidden
-            expect(screenshot3).toHaveCss({"display":"none"});
-        });
-        it('pop up image 4 on click', function(){
-            //click the image-icon to show the larger image
-            imageSelect.trigger('click');
-            //check if it is visible
-            expect(screenshot4).toHaveCss({"display":"block"});
-            //click the icon again
-            imageSelect.trigger('click');
-            //check if it is hidden
-            expect(screenshot4).toHaveCss({"display":"none"});
+            expect(screenshot).toHaveCss({"display":"none"});
         });
 
     });
 
     /* A test suite named "Initial Entries" */
-    // describe('Initial Entries', function(){
-    //     /* TODO: Write a test that ensures when the loadFeed
-    //      * function is called and completes its work, there is at least
-    //      * a single .entry element within the .feed container.
-    //      * Remember, loadFeed() is asynchronous so this test wil require
-    //      * the use of Jasmine's beforeEach and asynchronous done() function.
-    //      */
-    //      it('calls loadfeed function and contains element', function(){
+    describe('Initial Entries', function(){
 
-    //      });
+        //Loops through all feeds starting at index 0.
+        for (var i = 0; i<allFeeds.length-1; i++){
+            beforeEach(function(done){
+                loadFeed(i, function(){
+                    done();
+                });
+            });
 
-    // });
+            //Ensures that each feed has at least one element.
+            it('has at least one entry within feed', function(done){
+                expect($('.feed .entry').length).toBeGreaterThan(0);
+                done();
+            });
+        }
 
-    // /* A test suite named "New Feed Selection"*/
-    // describe('New Feed Selection', function(){
-    //     /* TODO: Write a test that ensures when a new feed is loaded
-    //      * by the loadFeed function that the content actually changes.
-    //      * Remember, loadFeed() is asynchronous.
-    //      */
-    //     it('loads new feed and changes content', function{
+    });
 
-    //     });
+    /* A test suite named "New Feed Selection" */
+    describe('New Feed Selection', function(){
+     /* A test that ensures when a new feed is loaded
+      * by the loadFeed function that the content actually changes.
+     */
 
-    // });
+        var header, entry;
 
+        beforeEach(function(done) { 
+            loadFeed(0, function() {
+                header = $('h1.header-title').text();
+                entry = $('.feed .entry h2').text();
+                loadFeed(1, function() {
+                    done();
+                });
+            });
+        });
 
+        //Checks that header updates.
+        it('updates header title', function() {
+            expect($('h1.header-title').text()).not.toBe(header);
+        });
+
+        //Checks that post title updates.
+        it('updates entry', function() {
+            expect($('.feed .entry h2').text()).not.toBe(entry);    
+        });
+    });
 
 }());

@@ -25,7 +25,7 @@ The purpose of this project was to become familiar with the Behavior-Driven Deve
 ## Additional steps taken
 
 1. Two matchers that were not available in the default Jasmine framework were created.
-* Additional Jasmine matchers `.toHaveClass` and `.toHaveCss` were added based off of code from: https://github.com/velesin/jasmine-jquery/blob/master/lib/jasmine-jquery.js
+	* Additional Jasmine matchers `.toHaveClass` and `.toHaveCss` were added based off of code from: https://github.com/velesin/jasmine-jquery/blob/master/lib/jasmine-jquery.js
 2. An additional test suite was added to check the functionality of a series of pop-up windows.
-* CSS-popup provided by: [Patrick Burt](http://www.pat-burt.com/web-development/how-to-do-a-css-popup-without-opening-a-new-window/)
+	* CSS-popup provided by: [Patrick Burt](http://www.pat-burt.com/web-development/how-to-do-a-css-popup-without-opening-a-new-window/)
 3. As mentioned, pop-up windows were added to provide the user a screenshot of what happens when the app fails a particular test suite.

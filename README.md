@@ -29,3 +29,4 @@ The purpose of this project was to become familiar with the Behavior-Driven Deve
 2. An additional test suite was added to check the functionality of a series of pop-up windows.
 	* CSS-popup provided by: [Patrick Burt](http://www.pat-burt.com/web-development/how-to-do-a-css-popup-without-opening-a-new-window/)
 3. As mentioned, pop-up windows were added to provide the user a screenshot of what happens when the app fails a particular test suite.
+4. Using Bootstrap causes formating issues, so a modified grid system was created using unique class names.

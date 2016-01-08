@@ -95,3 +95,66 @@ h2 {
     padding: 1em;
     margin: 0.5em 0;
 }
+
+#blanket {
+   background-color:#111;
+   opacity: 0.65;
+   position:absolute;
+   z-index: 9001;
+   top:0px;
+   left:0px;
+   width:100%;
+}
+
+#popUpDiv {
+    position:absolute;
+    background-color:#eeeeee;
+    width:900px;
+    overflow: scroll;
+    z-index: 9002;
+}
+
+#popUpDiv2 {
+    position:absolute;
+    background-color:#eeeeee;
+    width:900px;
+    overflow: scroll;
+    z-index: 9002;
+}
+
+#popUpDiv3 {
+    position:absolute;
+    background-color:#eeeeee;
+    width:900px;
+    overflow: scroll;
+    z-index: 9002;
+}
+
+#popUpDiv4 {
+    position:absolute;
+    background-color:#eeeeee;
+    width:900px;
+    overflow: scroll;
+    z-index: 9002;
+}
+
+.screenshot-bar{
+    margin-top: 20px;
+    text-align: center;
+
+}
+
+.row-display{
+    display: inline-flex;
+    width: 100%;
+}
+
+.col-4{
+    width: 25%;
+    background-color: #c0c0c0;
+    padding: 15px;
+}
+
+.col-4 img{
+    width: 80%;
+}

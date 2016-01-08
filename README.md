@@ -1,31 +1,11 @@
-CSS-popup provided by: [Patrick Burt](http://www.pat-burt.com/web-development/how-to-do-a-css-popup-without-opening-a-new-window/)
-
-Additional Jasmine matchers `.toHaveClass` and `.toHaveCss` were added based off of code from: https://github.com/velesin/jasmine-jquery/blob/master/lib/jasmine-jquery.js
 
 # Project Overview
 
-In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
+The purpose of this project was to become familiar with the Behavior-Driven Development (BDD) framework, [Jasmine](http://jasmine.github.io/). A web-based, RSS feed-reader was subjected to a series of pass-fail test suites in order to ensure its functionality. The tests evaluated the underlying business logic of the application as well as the event handling and DOM manipulation.
 
+* A live version of this application can be viewed here: [Project-6 Feed Reader](http://marc1981.github.io/project-6--js-testing)
 
-## Why this Project?
-
-Testing is an important part of the development process and many organizations practice a standard of development known as "test-driven development". This is when developers write tests first, before they ever start developing their application. All the tests initially fail and then they start writing application code to make these tests pass.
-
-Whether you work in an organization that uses test-driven development or in an organization that uses tests to make sure future feature development doesn't break existing features, it's an important skill to have!
-
-
-## What will I learn?
-
-You will learn how to use Jasmine to write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
-
-
-## How will this help my career?
-
-* Writing effective tests requires analyzing multiple aspects of an application including the HTML, CSS and JavaScript - an extremely important skill when changing teams or joining a new company.
-* Good tests give you the ability to quickly analyze whether new code breaks an existing feature within your codebase, without having to manually test all of the functionality.
-
-
-# How will I complete this project?
+# How was this project completed? - The following steps were taken in order to complete this project.
 
 1. Download the [required project assets](http://github.com/udacity/frontend-nanodegree-feedreader).
 2. Review the functionality of the application within your browser.
@@ -41,3 +21,11 @@ You will learn how to use Jasmine to write a number of tests against a pre-exist
 12. Write a test that ensures when the loadFeed function is called and completes its work, there is at least a single .entry element within the .feed container. Remember, loadFeed() is asynchronous so this test wil require the use of Jasmine's beforeEach and asynchronous done() function.
 13. Write a test that ensures when a new feed is loaded by the loadFeed function that the content actually changes. Remember, loadFeed() is asynchronous.
 14. When complete - all of your tests should pass.
+
+## Additional steps taken
+
+1. Two matchers that were not available in the default Jasmine framework were created.
+* Additional Jasmine matchers `.toHaveClass` and `.toHaveCss` were added based off of code from: https://github.com/velesin/jasmine-jquery/blob/master/lib/jasmine-jquery.js
+2. An additional test suite was added to check the functionality of a series of pop-up windows.
+* CSS-popup provided by: [Patrick Burt](http://www.pat-burt.com/web-development/how-to-do-a-css-popup-without-opening-a-new-window/)
+3. As mentioned, pop-up windows were added to provide the user a screenshot of what happens when the app fails a particular test suite.

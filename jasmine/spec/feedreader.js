@@ -11,28 +11,28 @@ $(function() {
             toHaveClass: function () {
                 return {
                     compare: function (actual, className) {
-                        return { pass: $(actual).hasClass(className) }
+                        return { pass: $(actual).hasClass(className) };
                     }
-                }
+                };
             },
 
             toHaveCss: function () {
                 return {
                   compare: function (actual, css) {
-                    var stripCharsRegex = /[\s;\"\']/g
+                    var stripCharsRegex = /[\s;\"\']/g;         
                     for (var prop in css) {
                         var value = css[prop];
-                        if ((value === 'auto') && ($(actual).get(0).style[prop] === 'auto')) continue
-                            var actualStripped = $(actual).css(prop).replace(stripCharsRegex, '')
-                            var valueStripped = value.replace(stripCharsRegex, '')
-                        if (actualStripped !== valueStripped) return { pass: false }
+                        if ((value === 'auto') && ($(actual).get(0).style[prop] === 'auto')) { continue; }
+                            var actualStripped = $(actual).css(prop).replace(stripCharsRegex, '');
+                            var valueStripped = value.replace(stripCharsRegex, '');
+                        if (actualStripped !== valueStripped) return { pass: false };
                         }
-                    return { pass: true }
+                    return { pass: true };
                     }
-                }
+                };
             }
             
-        }) 
+        }); 
 
     });
     
@@ -54,7 +54,7 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-         it('defines url and is not empty', function(){
+        it('defines url and is not empty', function(){
             for(var i = 0; i < allFeeds.length; i++){
                 expect(allFeeds[i].url).toBeDefined();
             /*
@@ -62,25 +62,19 @@ $(function() {
             *is that the url will be present and not be an empty string.
             */
                 expect(allFeeds[i].url).not.toBe(0 || '');
-            /*
-            *The following line ensures that url has met the minimum requirements
-            *for a functional feed, namely it contains 'http' and 'feed'. Not a
-            *guarantee, but better than nothing.
-            */
-                expect(allFeeds[i].url).toContain('http' && 'feed');
             }
-         });
+        });
 
         /* A test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-         it('defines name and is not empty', function(){
+        it('defines name and is not empty', function(){
             for(var i = 0; i < allFeeds.length; i++){
                 expect(allFeeds[i].name).toBeDefined();
                 expect(allFeeds[i].name).not.toBe(0 || '');
             }
-         });
+        });
     });
 
 
@@ -136,20 +130,15 @@ $(function() {
     /* A test suite named "Initial Entries" */
     describe('Initial Entries', function(){
 
-        //Loops through all feeds starting at index 0.
-        for (var i = 0; i<allFeeds.length-1; i++){
-            beforeEach(function(done){
-                loadFeed(i, function(){
-                    done();
-                });
-            });
+        beforeEach(function(done){
+            loadFeed(0, done);
+        });
 
-            //Ensures that each feed has at least one element.
-            it('has at least one entry within feed', function(done){
-                expect($('.feed .entry').length).toBeGreaterThan(0);
-                done();
-            });
-        }
+        //Ensures that each feed has at least one element.
+        it('has at least one entry within feed', function(done){
+            expect($('.feed .entry').length).toBeGreaterThan(0);
+            done();
+        });
 
     });
 

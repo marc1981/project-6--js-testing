@@ -3,7 +3,9 @@
 
 The purpose of this project was to become familiar with the Behavior-Driven Development (BDD) framework, [Jasmine](http://jasmine.github.io/). A web-based, RSS feed-reader was subjected to a series of pass-fail test suites in order to ensure its functionality. The tests evaluated the underlying business logic of the application as well as the event handling and DOM manipulation.
 
-* A live version of this application can be viewed here: [Project-6 Feed Reader](http://marc1981.github.io/project-6--js-testing)
+* To use, download or clone the repository then open index.html in browser. The page will load, and the tests automatically run. The results are displayed at the bottom of the page in a format that is standard to the Jasmine framework. 
+
+* Alternatively, a live version of this application can be viewed here: [Project-6 Feed Reader](http://marc1981.github.io/project-6--js-testing)
 
 # How was this project completed? - The following steps were taken in order to complete this project.
 

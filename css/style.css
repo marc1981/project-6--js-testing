@@ -106,6 +106,10 @@ h2 {
    width:100%;
 }
 
+.pop img{
+    width: 1300px;
+}
+
 #popUpDiv {
     position:absolute;
     background-color:#eeeeee;
